@@ -1,0 +1,17 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+  login: admin
+- url: /(.*(\.js|.html|.css|.png|.jpg|.svg|.mp4|.webm|.ico|.mp3|.otf))
+  static_files: \1
+  upload: (.*(\.js|.html|.css|.png|.jpg|.svg|.mp4|.webm|.ico|.mp3|.otf))
+  login: admin
+- url: /(.+)
+  static_files: index.html
+  upload: index.html
+  login: admin
